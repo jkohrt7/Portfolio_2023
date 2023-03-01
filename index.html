@@ -5,15 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./styles/global-styles.css">
-    <link rel="stylesheet" href="./styles/header-styles.css/styles.css">
+    <link rel="stylesheet" href="./styles/css/global-styles.css">
+    <link rel="stylesheet" href="./styles/css/header-styles.css">
+    <link rel="stylesheet" href="./styles/css/reset.css">
 </head>
 <body>
     <header class="header">
         <div class="header__name">
             JK
         </div>
+
         <nav class="header__navbar">
+            <div class="header__hamburger-container">
+                <img class="header__hamburger-icon" src="./img/hamburger.svg" alt="Icon indicating a collapsed navigation menu">
+            </div>
+            
             <ul class="header__list">
                 <li class="header__item">About</li>
                 <li class="header__item">Portfolio</li>
@@ -21,6 +27,7 @@
                 <li class="header__item">Resume</li>
             </ul>
         </nav>
+        
     </header>
     <div class="hero">
         <div class = "hero__content">
