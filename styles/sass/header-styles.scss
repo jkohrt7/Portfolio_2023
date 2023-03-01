@@ -39,5 +39,17 @@ $breakpoint-tablet: 768px;
             right:0;
         }
     }
+}
 
+.hero {
+    color: white;
+    background-image: linear-gradient(175deg, rgba(0,0,0,1) 0%, rgba(41,41,41,1) 72%, rgba(96,96,96,1) 100%);
+
+    padding: 2rem;
+
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
 }
