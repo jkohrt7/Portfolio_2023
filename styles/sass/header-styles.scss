@@ -1,9 +1,19 @@
 $breakpoint-tablet: 768px;
+$primary-navy: #0A192F;
+$secondary-navy: #005C7B;
+$primary-aqua: #00AAB3;
+$secondary-aqua: #72FACA;
 
 .header {
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
 
+    position: fixed;
+    width:100vw;
+
+    background-color: $primary-navy;
+    color: white;
     padding: 1.5rem; // 24px
 
     &__list {
@@ -42,14 +52,52 @@ $breakpoint-tablet: 768px;
 }
 
 .hero {
-    color: white;
-    background-image: linear-gradient(175deg, rgba(0,0,0,1) 0%, rgba(41,41,41,1) 72%, rgba(96,96,96,1) 100%);
+    color: whitesmoke;
+    background-color: $primary-navy;
 
-    padding: 2rem;
+    padding: 2rem 2rem 2rem 2rem;
+    height: 100vh;
+
+    display: flex;
 
     &__content {
         display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+
+    &__text {
         align-items: center;
         justify-content: space-evenly;
+        margin: auto 2rem auto 0;
+
+        &--header {
+            color: $secondary-aqua;
+            margin-bottom: 0.25rem;
+            font-size: 32px;
+        }
+        &--body {
+            font-size: 48px;
+        }
+    }
+
+    &__image {
+        max-width: 50%;
     }
 }
+
+@media (max-width: $breakpoint-tablet) {
+    .hero {
+        &__text {
+            &--header {
+                font-size: 24px;
+            }
+
+            &--body {
+                font-size: 32px;
+            }
+        }
+    }
+}
+
+
