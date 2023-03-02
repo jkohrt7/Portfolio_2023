@@ -100,4 +100,50 @@ $secondary-aqua: #72FACA;
     }
 }
 
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    margin: auto;
+    width: 90vw;
+    max-width:80rem;
+    outline: orange solid 1px;
+}
+
+.about-me {
+    &__header {
+        color: $secondary-aqua;
+        font-size: 18px;
+    }
+
+    &__body {
+        color: whitesmoke;
+        font-size: 18px;
+    }
+}
+
+.portfolio {
+    &__header {
+        color: $secondary-aqua;
+        font-size: 18px;
+    }
+
+    &__body {
+        color: whitesmoke;
+        font-size: 18px;
+    }
+}
+
+.contact {
+    &__header {
+        color: $secondary-aqua;
+        font-size: 18px;
+    }
+
+    &__body {
+        color: whitesmoke;
+        font-size: 18px;
+    }
+}
 

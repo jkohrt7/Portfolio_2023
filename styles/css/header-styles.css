@@ -55,3 +55,36 @@
     font-size: 24px; }
   .hero__text--body {
     font-size: 32px; } }
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: auto;
+  width: 90vw;
+  max-width: 80rem;
+  outline: orange solid 1px; }
+
+.about-me__header {
+  color: #72FACA;
+  font-size: 18px; }
+
+.about-me__body {
+  color: whitesmoke;
+  font-size: 18px; }
+
+.portfolio__header {
+  color: #72FACA;
+  font-size: 18px; }
+
+.portfolio__body {
+  color: whitesmoke;
+  font-size: 18px; }
+
+.contact__header {
+  color: #72FACA;
+  font-size: 18px; }
+
+.contact__body {
+  color: whitesmoke;
+  font-size: 18px; }
