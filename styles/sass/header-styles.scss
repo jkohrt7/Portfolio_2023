@@ -15,8 +15,9 @@ $secondary-aqua: #72FACA;
 
     font-family: "Roboto Mono", sans-serif;
 
-    background-color: $primary-navy;
-    color: white;
+    background-color: rgba(10, 25, 47, 0.5);
+    backdrop-filter: blur(16px);
+    color: $secondary-aqua;
     padding: 1.5rem; // 24px
 
     &__list {
