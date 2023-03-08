@@ -4,6 +4,7 @@
   justify-content: space-between;
   position: fixed;
   width: 100vw;
+  font-family: "Roboto Mono", sans-serif;
   background-color: #0A192F;
   color: white;
   padding: 1.5rem; }
@@ -15,6 +16,8 @@
     position: relative; }
   .header__hamburger-icon {
     display: none; }
+  .header__navbar {
+    font-size: 18px; }
 
 @media (max-width: 768px) {
   .header__list {
@@ -32,7 +35,8 @@
   background-color: #0A192F;
   padding: 2rem 2rem 2rem 2rem;
   height: 100vh;
-  display: flex; }
+  display: flex;
+  font-family: "Roboto", sans-serif; }
   .hero__content {
     display: flex;
     justify-content: center;
@@ -40,10 +44,10 @@
   .hero__text {
     align-items: center;
     justify-content: space-evenly;
-    margin: auto 2rem auto 0; }
+    margin: auto 2rem auto 0;
+    line-height: 1.25; }
     .hero__text--header {
       color: #72FACA;
-      margin-bottom: 0.25rem;
       font-size: 32px; }
     .hero__text--body {
       font-size: 48px; }
@@ -59,32 +63,65 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
   margin: auto;
-  width: 90vw;
+  width: 80vw;
   max-width: 80rem;
-  outline: orange solid 1px; }
+  font-family: "Roboto", sans-serif; }
 
 .about-me__header {
   color: #72FACA;
-  font-size: 18px; }
+  font-size: 24px;
+  margin-bottom: 1rem;
+  position: relative;
+  font-weight: 500;
+  font-family: "Roboto Mono", sans-serif; }
 
 .about-me__body {
   color: whitesmoke;
-  font-size: 18px; }
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5; }
+
+.about-me__underline-svg {
+  position: absolute;
+  top: 2rem;
+  left: -2rem; }
 
 .portfolio__header {
   color: #72FACA;
-  font-size: 18px; }
+  font-size: 24px;
+  margin-bottom: 1rem;
+  position: relative;
+  font-weight: 500;
+  font-family: "Roboto Mono", sans-serif; }
 
 .portfolio__body {
   color: whitesmoke;
-  font-size: 18px; }
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5; }
+
+.portfolio__underline-svg {
+  position: absolute;
+  top: 2rem;
+  left: -2rem; }
 
 .contact__header {
   color: #72FACA;
-  font-size: 18px; }
+  font-size: 24px;
+  margin-bottom: 1rem;
+  position: relative;
+  font-weight: 500;
+  font-family: "Roboto Mono", sans-serif; }
 
 .contact__body {
   color: whitesmoke;
-  font-size: 18px; }
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5; }
+
+.contact__underline-svg {
+  position: absolute;
+  top: 2rem;
+  left: -2rem; }

@@ -4,6 +4,7 @@ $secondary-navy: #005C7B;
 $primary-aqua: #00AAB3;
 $secondary-aqua: #72FACA;
 
+// ~~ Navbar ~~
 .header {
     box-sizing: border-box;
     display: flex;
@@ -11,6 +12,8 @@ $secondary-aqua: #72FACA;
 
     position: fixed;
     width:100vw;
+
+    font-family: "Roboto Mono", sans-serif;
 
     background-color: $primary-navy;
     color: white;
@@ -30,6 +33,10 @@ $secondary-aqua: #72FACA;
 
     &__hamburger-icon {
         display: none;
+    }
+
+    &__navbar {
+        font-size: 18px;
     }
 }
 
@@ -51,6 +58,7 @@ $secondary-aqua: #72FACA;
     }
 }
 
+// ~~ Hero Section ~~
 .hero {
     color: whitesmoke;
     background-color: $primary-navy;
@@ -59,6 +67,8 @@ $secondary-aqua: #72FACA;
     height: 100vh;
 
     display: flex;
+
+    font-family: "Roboto", sans-serif;
 
     &__content {
         display: flex;
@@ -71,9 +81,10 @@ $secondary-aqua: #72FACA;
         justify-content: space-evenly;
         margin: auto 2rem auto 0;
 
+        line-height: 1.25;
+
         &--header {
             color: $secondary-aqua;
-            margin-bottom: 0.25rem;
             font-size: 32px;
         }
         &--body {
@@ -103,47 +114,82 @@ $secondary-aqua: #72FACA;
 .main-content {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
 
     margin: auto;
-    width: 90vw;
-    max-width:80rem;
-    outline: orange solid 1px;
+    width: 80vw;
+    max-width: 80rem;
+
+    font-family: "Roboto", sans-serif;
+    //outline: orange solid 1px;
 }
+
+// ~~ MAIN section ~~
+// Mixins for the main sections. 
+@mixin article-header {
+    color: $secondary-aqua;
+    font-size: 24px;
+    margin-bottom: 1rem;
+    position: relative;
+
+    font-weight: 500;
+    font-family: "Roboto Mono", sans-serif;
+}
+
+@mixin article-body {
+    color: whitesmoke;
+    font-size: 18px;
+
+    font-weight: 300;
+    line-height: 1.5;
+}
+
 
 .about-me {
     &__header {
-        color: $secondary-aqua;
-        font-size: 18px;
+        @include article-header;
     }
 
     &__body {
-        color: whitesmoke;
-        font-size: 18px;
+        @include article-body;
+    }
+
+    &__underline-svg {
+        position: absolute;
+        top: 2rem;
+        left: -2rem;
     }
 }
 
 .portfolio {
     &__header {
-        color: $secondary-aqua;
-        font-size: 18px;
+        @include article-header;
     }
 
     &__body {
-        color: whitesmoke;
-        font-size: 18px;
+        @include article-body;
+    }
+
+    &__underline-svg {
+        position: absolute;
+        top: 2rem;
+        left: -2rem;
     }
 }
 
 .contact {
     &__header {
-        color: $secondary-aqua;
-        font-size: 18px;
+        @include article-header;
     }
 
     &__body {
-        color: whitesmoke;
-        font-size: 18px;
+        @include article-body;
+    }
+
+    &__underline-svg {
+        position: absolute;
+        top: 2rem;
+        left: -2rem;
     }
 }
 
