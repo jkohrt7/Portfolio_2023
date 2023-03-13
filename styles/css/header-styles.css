@@ -12,7 +12,20 @@
   .header__list {
     display: flex; }
   .header__item {
-    margin: 0rem 1rem; }
+    margin: 0rem 1rem;
+    position: relative; }
+    .header__item::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 100%;
+      left: 0;
+      bottom: -3px;
+      border-bottom: #00AAB3 solid 3px;
+      transition: width 0.25s; }
+    .header__item:hover::after {
+      width: 100%;
+      border-width: 3px; }
   .header__hamburger-container {
     position: relative; }
   .header__hamburger-icon {
@@ -69,6 +82,8 @@
   width: 80vw;
   max-width: 80rem;
   font-family: "Roboto", sans-serif; }
+  .main-content a {
+    color: aquamarine; }
 
 .about-me__header {
   color: #72FACA;
@@ -83,6 +98,8 @@
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5; }
+  .about-me__body p {
+    margin-bottom: 1rem; }
 
 .about-me__underline-svg {
   position: absolute;
@@ -97,18 +114,66 @@
   font-weight: 500;
   font-family: "Roboto Mono", sans-serif; }
 
-.portfolio__body {
+.portfolio__list {
   color: whitesmoke;
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.5; }
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; }
+  .portfolio__list img {
+    max-width: 30rem; }
 
 .portfolio__underline-svg {
   position: absolute;
   top: 2rem;
   left: -2rem; }
 
-.contact__header {
+.portfolio-item {
+  display: flex;
+  transition: 1s; }
+  .portfolio-item__caption {
+    flex-shrink: 1;
+    margin: auto 1rem;
+    padding: 1rem; }
+    .portfolio-item__caption h3 {
+      color: #72FACA;
+      font-weight: 500;
+      font-family: "Roboto Mono", sans-serif;
+      margin-bottom: 0.5rem; }
+  .portfolio-item__about p {
+    margin-bottom: 0.5rem; }
+  .portfolio-item__links {
+    display: flex;
+    justify-content: space-around; }
+  .portfolio-item__image {
+    flex-grow: 1;
+    position: relative;
+    min-width: 28rem;
+    min-height: 17rem;
+    border: #00394b solid 4px; }
+    .portfolio-item__image img {
+      filter: grayscale(100%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
+    .portfolio-item__image::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      background-color: rgba(1, 75, 97, 0.75);
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      z-index: 2;
+      transition: background-color 0.3s ease; }
+    .portfolio-item__image:hover img {
+      filter: grayscale(0%); }
+    .portfolio-item__image:hover::before {
+      background-color: rgba(1, 75, 97, 0); }
+
+.resume__header {
   color: #72FACA;
   font-size: 24px;
   margin-bottom: 1rem;
@@ -116,13 +181,13 @@
   font-weight: 500;
   font-family: "Roboto Mono", sans-serif; }
 
-.contact__body {
+.resume__body {
   color: whitesmoke;
   font-size: 18px;
   font-weight: 300;
   line-height: 1.5; }
 
-.contact__underline-svg {
+.resume__underline-svg {
   position: absolute;
   top: 2rem;
   left: -2rem; }

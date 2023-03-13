@@ -25,8 +25,8 @@
             <ul class="header__list">
                 <li class="header__item">About</li>
                 <li class="header__item">Portfolio</li>
-                <li class="header__item">Contact</li>
                 <li class="header__item">Resume</li>
+                <li class="header__item">Contact</li>
             </ul>
         </nav>
         
@@ -55,7 +55,12 @@
                     <img class="about-me__underline-svg" src="./img/line-with-circle.svg" alt="">    
                 </div>
                 <div class="about-me__body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla enim quia veniam maxime at, laudantium explicabo reiciendis obcaecati nesciunt rerum esse repudiandae consectetur cumque nam magnam voluptas nobis laborum quaerat.
+                    <p>
+                         Hey! I'm Jared, a web developer and aspiring accessibility specialist. I kicked off my webdev career back in 2020 when I was part of a research team creating a web app for processing and visualizing biological data. That taste of web dev got me hooked, and I decided to pursue a career in the field after I graduated with a BS in computer science. Since then, I've worked with <a href="https://sparkbox.com/">Sparkbox</a> to create <a href="https://accessible-components.sparkbox.com/">Accessible Components</a> (a reference site that helps other web devs adhere to WCAG guidelines) and a React Native application for a client that I can't name (signed an NDA).
+                    </p>
+                    <p>
+                        Sparkbox placed a lot of importance on creating accessible products, and that's a mindset I'm interested in cultivating and learning more about as I continue my career. I'd ultimately like to become a certified accessibility specialist and am working on neccessary prerequsites.
+                    </p>
                 </div>
             </section>
             <section class="portfolio">
@@ -63,18 +68,53 @@
                     <h3>Portfolio</h3>
                     <img class="portfolio__underline-svg" src="./img/line-with-circle.svg" alt="">
                 </div>
-                <div class="portfolio__body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus rem nulla vero corrupti molestias sapiente quia eaque necessitatibus. Reprehenderit distinctio quo debitis culpa ipsam modi architecto totam eius. Possimus, minima.
+                <div class="portfolio__list">
+                    <div class="portfolio-item">
+                        <div class="portfolio-item__image">
+                            <img src="./img/accessible.png" alt="A webpage where an astronaut floats beside an asteroid">
+                        </div>
+                        
+                        <div class="portfolio-item__caption">
+                            <h3>Accessible Components</h3>
+                            <div class="portfolio-item__about">
+                                <p>
+                                    Offers interactive code snippets that follow WCAG guidelines alongside explanations of the guidelines themselves. Created in 2022 with other Sparkbox apprentices.
+                                </p>
+                                <div class="portfolio-item__links">
+                                    <a href="https://accessible-components.sparkbox.com/">Deployed Site</a>
+                                    <a href="https://github.com/sparkbox/accessible-components">Github</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class = "portfolio-item__image" >
+                            <img src="./img/neo.png" alt="A webpage where an astronaut floats beside an asteroid">
+                        </div>
+                        
+                        <div class="portfolio-item__caption">
+                            <h3>Near-Earth Objects Tracker</h3>
+                            <div class="portfolio-item__about">
+                                <p>
+                                    Visualizes near-earth objects (eg asteroids) in 3D using WebGL and canvas. (Note: WebGL is not fully supported in Safari!)
+                                </p>
+                                <div class="portfolio-item__links">
+                                    <a href="https://jkohrt7.github.io/Asteroids/">Deployed Site</a>
+                                    <a href="https://github.com/jkohrt7/Asteroids">Github</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
-            <section class="contact">
-                    <div class="contact__header">
-                        <h3>Contact</h3>
-                        <img class="contact__underline-svg" src="./img/line-with-circle.svg" alt="">
-                    
+            <section class="resume">
+                    <div class="resume__header">
+                        <h3>Resume</h3>
+                        <img class="resume__underline-svg" src="./img/line-with-circle.svg" alt="">
                     </div>
-                    <div class="contact__body">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit aliquid consequuntur maxime cumque eius iure molestiae voluptatibus deserunt quis? Expedita necessitatibus ullam tenetur molestias! Earum deleniti ratione molestias omnis consequuntur!
+                    <div class="resume__body">
+                        If you'd like a copy of my resume for later, you can download it as a pdf or docx here.
                     </div>
             </section>
         </div>
