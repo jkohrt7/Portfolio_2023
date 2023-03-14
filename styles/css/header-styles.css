@@ -47,7 +47,7 @@
 .hero {
   color: whitesmoke;
   background-color: #0A192F;
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 1.5rem 2rem 2rem 2rem;
   height: 100vh;
   display: flex;
   font-family: "Roboto", sans-serif; }
@@ -162,7 +162,7 @@
       content: "";
       position: absolute;
       left: 0;
-      background-color: rgba(1, 75, 97, 0.75);
+      background-color: rgba(1, 101, 131, 0.75);
       width: 100%;
       height: 100%;
       max-height: 100%;
@@ -171,7 +171,12 @@
     .portfolio-item__image:hover img {
       filter: grayscale(0%); }
     .portfolio-item__image:hover::before {
-      background-color: rgba(1, 75, 97, 0); }
+      background-color: rgba(1, 101, 131, 0); }
+  @media (max-width: 920px) {
+    .portfolio-item {
+      background-color: #00394b; }
+      .portfolio-item__image {
+        display: none; } }
 
 .resume__header {
   color: #72FACA;
@@ -185,7 +190,18 @@
   color: whitesmoke;
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.5; }
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; }
+  .resume__body--links {
+    display: flex;
+    justify-content: center;
+    gap: 3rem; }
+  .resume__body--image {
+    margin: auto; }
+    .resume__body--image img {
+      max-height: 25rem; }
 
 .resume__underline-svg {
   position: absolute;
