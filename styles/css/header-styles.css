@@ -88,10 +88,19 @@
 .about-me__header {
   color: #72FACA;
   font-size: 24px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
   font-weight: 500;
   font-family: "Roboto Mono", sans-serif; }
+  .about-me__header::after {
+    content: "";
+    background-image: url("../../img/line-with-circle.svg");
+    position: absolute;
+    top: 2rem;
+    left: -2rem;
+    width: 15rem;
+    height: 2.75rem;
+    background-repeat: no-repeat; }
 
 .about-me__body {
   color: whitesmoke;
@@ -101,18 +110,22 @@
   .about-me__body p {
     margin-bottom: 1rem; }
 
-.about-me__underline-svg {
-  position: absolute;
-  top: 2rem;
-  left: -2rem; }
-
 .portfolio__header {
   color: #72FACA;
   font-size: 24px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
   font-weight: 500;
   font-family: "Roboto Mono", sans-serif; }
+  .portfolio__header::after {
+    content: "";
+    background-image: url("../../img/line-with-circle.svg");
+    position: absolute;
+    top: 2rem;
+    left: -2rem;
+    width: 15rem;
+    height: 2.75rem;
+    background-repeat: no-repeat; }
 
 .portfolio__list {
   color: whitesmoke;
@@ -124,11 +137,6 @@
   gap: 1rem; }
   .portfolio__list img {
     max-width: 30rem; }
-
-.portfolio__underline-svg {
-  position: absolute;
-  top: 2rem;
-  left: -2rem; }
 
 .portfolio-item {
   display: flex;
@@ -150,10 +158,13 @@
   .portfolio-item__image {
     flex-grow: 1;
     position: relative;
-    min-width: 28rem;
-    min-height: 17rem;
+    min-width: 26rem;
+    min-height: 15rem;
     border: #00394b solid 4px; }
     .portfolio-item__image img {
+      position: absolute;
+      top: 0;
+      left: 0;
       filter: grayscale(100%);
       width: 100%;
       height: 100%;
@@ -181,10 +192,19 @@
 .resume__header {
   color: #72FACA;
   font-size: 24px;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
   font-weight: 500;
   font-family: "Roboto Mono", sans-serif; }
+  .resume__header::after {
+    content: "";
+    background-image: url("../../img/line-with-circle.svg");
+    position: absolute;
+    top: 2rem;
+    left: -2rem;
+    width: 15rem;
+    height: 2.75rem;
+    background-repeat: no-repeat; }
 
 .resume__body {
   color: whitesmoke;
@@ -201,7 +221,8 @@
   .resume__body--image {
     margin: auto; }
     .resume__body--image img {
-      max-height: 25rem; }
+      max-height: 25rem;
+      border: rgba(1, 101, 131, 0.75) solid 4px; }
 
 .resume__underline-svg {
   position: absolute;

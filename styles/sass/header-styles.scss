@@ -143,7 +143,6 @@ $secondary-aqua: #72FACA;
     max-width: 80rem;
 
     font-family: "Roboto", sans-serif;
-    //outline: orange solid 1px;
 
     a {
         color:aquamarine;
@@ -154,7 +153,7 @@ $secondary-aqua: #72FACA;
 @mixin article-header {
     color: $secondary-aqua;
     font-size: 24px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     position: relative;
 
     font-weight: 500;
@@ -169,10 +168,23 @@ $secondary-aqua: #72FACA;
     line-height: 1.5;
 }
 
+@mixin header-svg {
+    &::after {
+        content: "";
+        background-image: url("../../img/line-with-circle.svg");
+        position: absolute;
+        top: 2rem;
+        left: -2rem;
+        width: 15rem;
+        height: 2.75rem;
+        background-repeat: no-repeat;
+    }
+}
 
 .about-me {
     &__header {
         @include article-header;
+        @include header-svg;
     }
 
     &__body {
@@ -181,17 +193,12 @@ $secondary-aqua: #72FACA;
             margin-bottom: 1rem;
         }
     }
-
-    &__underline-svg {
-        position: absolute;
-        top: 2rem;
-        left: -2rem;
-    }
 }
 
 .portfolio {
     &__header {
         @include article-header;
+        @include header-svg;
     }
 
     &__list {
@@ -204,12 +211,6 @@ $secondary-aqua: #72FACA;
         img {
             max-width: 30rem;
         }
-    }
-
-    &__underline-svg {
-        position: absolute;
-        top: 2rem;
-        left: -2rem;
     }
 }
 
@@ -246,12 +247,15 @@ $secondary-aqua: #72FACA;
     &__image {
         flex-grow: 1;
         position: relative;
-        min-width: 28rem;
-        min-height: 17rem;
+        min-width: 26rem;
+        min-height: 15rem;
 
         border: $secondary-navy solid 4px;
 
         img {
+            position: absolute;
+            top:0;
+            left:0;
             filter: grayscale(100%);
             width: 100%;
             height: 100%;
@@ -296,6 +300,7 @@ $secondary-aqua: #72FACA;
 .resume {
     &__header {
         @include article-header;
+        @include header-svg;
     }
 
     &__body {
@@ -312,10 +317,10 @@ $secondary-aqua: #72FACA;
 
         &--image {
             margin: auto;
-            
 
             img {
                 max-height: 25rem;
+                border: rgba(1, 101, 131, 0.75)  solid 4px;
             }
         }
     }
