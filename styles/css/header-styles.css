@@ -14,9 +14,13 @@
   .header__item {
     margin: 0rem 1rem;
     position: relative; }
+    .header__item a {
+      position: inherit;
+      z-index: 100; }
     .header__item::after {
       content: "";
       position: absolute;
+      z-index: 99;
       width: 0%;
       height: 100%;
       left: 0;
@@ -32,17 +36,16 @@
     display: none; }
   .header__navbar {
     font-size: 18px; }
-
-@media (max-width: 768px) {
-  .header__list {
-    display: none; }
-  .header__hamburger-icon {
-    display: flex;
-    box-sizing: border-box;
-    width: 2rem;
-    position: absolute;
-    top: -0.5rem;
-    right: 0; } }
+  @media (max-width: 768px) {
+    .header__list {
+      display: none; }
+    .header__hamburger-icon {
+      display: flex;
+      box-sizing: border-box;
+      width: 2rem;
+      position: absolute;
+      top: -0.5rem;
+      right: 0; } }
 
 .hero {
   color: whitesmoke;
@@ -224,7 +227,19 @@
       max-height: 25rem;
       border: rgba(1, 101, 131, 0.75) solid 4px; }
 
-.resume__underline-svg {
-  position: absolute;
-  top: 2rem;
-  left: -2rem; }
+.contact__header {
+  color: #72FACA;
+  font-size: 24px;
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-weight: 500;
+  font-family: "Roboto Mono", sans-serif; }
+  .contact__header::after {
+    content: "";
+    background-image: url("../../img/line-with-circle.svg");
+    position: absolute;
+    top: 2rem;
+    left: -2rem;
+    width: 15rem;
+    height: 2.75rem;
+    background-repeat: no-repeat; }

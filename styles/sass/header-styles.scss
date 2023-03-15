@@ -28,9 +28,15 @@ $secondary-aqua: #72FACA;
         margin: 0rem 1rem; // 0, 16px
         position: relative;
 
+        a {
+            position: inherit;
+            z-index: 100;
+        }
+
         &::after {
             content: "";
             position: absolute;
+            z-index: 99;
             width: 0%;
             height: 100%;
             left: 0;
@@ -59,10 +65,8 @@ $secondary-aqua: #72FACA;
     &__navbar {
         font-size: 18px;
     }
-}
 
-@media (max-width: $breakpoint-tablet) {
-    .header {
+    @media (max-width: $breakpoint-tablet) {
         &__list {
             display: none;
         }
@@ -295,8 +299,6 @@ $secondary-aqua: #72FACA;
     }
 }
 
-
-
 .resume {
     &__header {
         @include article-header;
@@ -324,11 +326,11 @@ $secondary-aqua: #72FACA;
             }
         }
     }
-
-    &__underline-svg {
-        position: absolute;
-        top: 2rem;
-        left: -2rem;
-    }
 }
 
+.contact {
+    &__header {
+        @include article-header;
+        @include header-svg;
+    }
+}   
