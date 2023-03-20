@@ -9,17 +9,17 @@
     <link rel="stylesheet" href="./styles/css/global-styles.css">
     <link rel="stylesheet" href="./styles/css/header-styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
-    
 </head>
-<body>
+<body id="body">
     <header class="header">
         <div class="header__name">
             JK
         </div>
-
         <nav class="header__navbar">
-            <div class="header__hamburger-container">
-                <img class="header__hamburger-icon" src="./img/hamburger.svg" alt="Icon indicating a collapsed navigation menu">
+            <div id="hamburger-icon" class="hamburger" role="button">
+                <span class="hamburger__bar"></span>
+                <span class="hamburger__bar"></span>
+                <span class="hamburger__bar"></span> 
             </div>
             
             <ul class="header__list">
@@ -161,4 +161,7 @@
         You should probably have one of these.
     </footer>
 </body>
+
+<script src="/js/header.js"></script>
+
 </html>
