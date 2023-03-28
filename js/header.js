@@ -1,62 +1,85 @@
-// Collapsable navbar menu for mobile.
-const hamburgerElement = document.querySelectorAll(".hamburger__bar");
+/**
+ *  JS controlling the hamburger menu.
+ *  When the screen is in Mobile view, the header links are 
+ *  "aria-hidden" BUT NOT ".active" unless the button has been clicked.
+ * 
+ *  When the screen is in desktop view, the header links are 
+ *  NEVER "aria-hidden" or ".active". 
+ */
+const hamburgerButton = document.querySelector(".hamburger")
+const hamburgerElements = document.querySelectorAll(".hamburger__bar");
 const headerList = document.querySelector(".header__list");
 let isMobile = false;
 let menuOpen = false;
 
-// Hide header contents if window begins in mobile view
+// Initial check for mobile/desktop styles
 if(window.innerWidth <= 768) {
     isMobile = true;
 
-    [...hamburgerElement].map((elem) => {
-        elem.setAttribute("hidden", true);
-        headerList.setAttribute("hidden", true);
+    [...hamburgerElements].map((elem) => {
+        setInactive(elem);
     })
+    setInactive(headerList);
+    setInactive(hamburgerButton);
+}
+else {
+    headerList.style.display = "flex";
 }
 
-// ...and adjust that hidden state whenever window is resized.
+// Adjust the aria-hidden and active states whenever window is resized. 
 window.addEventListener("resize", () => {
     if(window.innerWidth <= 768) {
         isMobile = true;
-        [...hamburgerElement].map((elem) => {
-            elem.setAttribute("hidden", true);
-            headerList.setAttribute("hidden", true);
+        [...hamburgerElements].map((elem) => {
+            elem.setAttribute("aria-hidden", true);
         })
+        setInactive(headerList);
+        setInactive(hamburgerButton);
     }
     else if (isMobile = true) {
         isMobile = false;
-        [...hamburgerElement].map((elem) => {
-            elem.setAttribute("hidden", false);
-            headerList.setAttribute("hidden", false);
+        [...hamburgerElements].map((elem) => {
+            elem.setAttribute("aria-hidden", false);
         })
+        setActive(headerList);
+        setActive(hamburgerButton);
     }
 })
 
+// Handle active and aria-hidden states when button is pressed.
 document.querySelector(".hamburger").addEventListener("click", ()=> {
     if(menuOpen) {
-        [...hamburgerElement].map((elem) => {
-            handleMenuClose(elem);
+        [...hamburgerElements].map((elem) => {
+            elem.classList.remove("active");
         });
-        handleMenuClose(headerList);
+        setInactive(headerList);
+        menuOpen = false;
+
+        // Let the closing animation play, then make it keyboard inaccessible
+        hamburgerButton.disabled = true;
+        setTimeout(() => {
+            headerList.style.display = "none";
+            hamburgerButton.disabled = false;
+        }, "800");
     }
     else {
-        [...hamburgerElement].map((elem) => {
-            handleMenuOpen(elem);
+        headerList.style.display = "flex";
+        [...hamburgerElements].map((elem) => {
+            elem.classList.add("active");
         });
-        handleMenuOpen(headerList);
+        setActive(headerList);
+        menuOpen = true;
     }
 });
 
-function handleMenuClose(elem) {
-    menuOpen = false;
+function setInactive(elem) {
     elem.classList.remove("active");
-    elem.setAttribute("hidden", true);
+    elem.setAttribute("aria-hidden", true);
 }
 
-function handleMenuOpen(elem) {
-    menuOpen = true;
+function setActive(elem) {
     elem.classList.add("active");
-    elem.setAttribute("hidden", false);
+    elem.setAttribute("aria-hidden", false);
 }
 
 //close menu when anything's clicked
