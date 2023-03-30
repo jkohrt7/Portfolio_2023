@@ -9,6 +9,7 @@
 const hamburgerButton = document.querySelector(".hamburger")
 const hamburgerElements = document.querySelectorAll(".hamburger__bar");
 const headerList = document.querySelector(".header__list");
+const headerLinks = document.querySelectorAll(".header__item a");
 let isMobile = false;
 let menuOpen = false;
 
@@ -34,6 +35,7 @@ window.addEventListener("resize", () => {
             elem.setAttribute("aria-hidden", true);
         })
         setInactive(headerList);
+        headerList.style.display ="none";
         setInactive(hamburgerButton);
     }
     else if (isMobile = true) {
@@ -42,6 +44,7 @@ window.addEventListener("resize", () => {
             elem.setAttribute("aria-hidden", false);
         })
         setActive(headerList);
+        headerList.style.display ="flex";
         setActive(hamburgerButton);
     }
 })
@@ -72,6 +75,24 @@ document.querySelector(".hamburger").addEventListener("click", ()=> {
     }
 });
 
+// Close menu when any of the links are clicked
+[...headerLinks].map((elem) => {
+    elem.addEventListener("click", () => {
+        [...hamburgerElements].map((elem) => {
+            elem.classList.remove("active");
+        });
+        setInactive(headerList);
+        menuOpen = false;
+
+        // Let the closing animation play, then make it keyboard inaccessible
+        hamburgerButton.disabled = true;
+        setTimeout(() => {
+            headerList.style.display = "none";
+            hamburgerButton.disabled = false;
+        }, "800");
+    })
+});
+
 function setInactive(elem) {
     elem.classList.remove("active");
     elem.setAttribute("aria-hidden", true);
@@ -81,5 +102,3 @@ function setActive(elem) {
     elem.classList.add("active");
     elem.setAttribute("aria-hidden", false);
 }
-
-//close menu when anything's clicked
