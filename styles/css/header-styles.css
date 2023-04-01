@@ -99,7 +99,7 @@
 .hero {
   color: whitesmoke;
   background-color: #0A192F;
-  padding: 1.25rem 2rem 2rem 2rem;
+  padding: 0 2rem 2rem 2rem;
   height: 100vh;
   display: flex;
   font-family: "Roboto", sans-serif; }

@@ -160,7 +160,7 @@ $secondary-aqua: #72FACA;
     color: whitesmoke;
     background-color: $primary-navy;
 
-    padding: 1.25rem 2rem 2rem 2rem;
+    padding: 0 2rem 2rem 2rem;
     height: 100vh;
 
     display: flex;
@@ -457,6 +457,7 @@ $secondary-aqua: #72FACA;
         display: grid;
         gap: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        
     }
 
     &__item {
