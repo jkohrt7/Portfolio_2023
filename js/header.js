@@ -12,9 +12,10 @@ const headerList = document.querySelector(".header__list");
 const headerLinks = document.querySelectorAll(".header__item a");
 let isMobile = false;
 let menuOpen = false;
+let breakpointTablet = 800;
 
 // Initial check for mobile/desktop styles
-if(window.innerWidth <= 768) {
+if(window.innerWidth <= breakpointTablet) {
     isMobile = true;
 
     [...hamburgerElements].map((elem) => {
@@ -29,7 +30,7 @@ else {
 
 // Adjust the aria-hidden and active states whenever window is resized. 
 window.addEventListener("resize", () => {
-    if(window.innerWidth <= 768) {
+    if(window.innerWidth <= breakpointTablet && isMobile === false) {
         isMobile = true;
         [...hamburgerElements].map((elem) => {
             elem.setAttribute("aria-hidden", true);
@@ -38,7 +39,7 @@ window.addEventListener("resize", () => {
         headerList.style.display ="none";
         setInactive(hamburgerButton);
     }
-    else if (isMobile = true) {
+    else if (window.innerWidth >= breakpointTablet && isMobile === true) {
         isMobile = false;
         [...hamburgerElements].map((elem) => {
             elem.setAttribute("aria-hidden", false);
@@ -78,18 +79,20 @@ document.querySelector(".hamburger").addEventListener("click", ()=> {
 // Close menu when any of the links are clicked
 [...headerLinks].map((elem) => {
     elem.addEventListener("click", () => {
-        [...hamburgerElements].map((elem) => {
-            elem.classList.remove("active");
-        });
-        setInactive(headerList);
-        menuOpen = false;
-
-        // Let the closing animation play, then make it keyboard inaccessible
-        hamburgerButton.disabled = true;
-        setTimeout(() => {
-            headerList.style.display = "none";
-            hamburgerButton.disabled = false;
-        }, "800");
+        if(isMobile) {
+            [...hamburgerElements].map((elem) => {
+                elem.classList.remove("active");
+            });
+            setInactive(headerList);
+            menuOpen = false;
+    
+            // Let the closing animation play, then make it keyboard inaccessible
+            hamburgerButton.disabled = true;
+            setTimeout(() => {
+                headerList.style.display = "none";
+                hamburgerButton.disabled = false;
+            }, "800");
+        }
     })
 });
 
