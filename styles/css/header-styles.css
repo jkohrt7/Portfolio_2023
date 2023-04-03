@@ -96,6 +96,32 @@
     .hamburger {
       display: block; } }
 
+.contact-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+  position: fixed;
+  left: 1rem;
+  bottom: 6rem; }
+  .contact-sidebar img {
+    width: 1.4rem;
+    filter: invert(100%);
+    transition: filter 0.1s ease-in-out; }
+    .contact-sidebar img:hover {
+      filter: invert(70%); }
+  .contact-sidebar::after {
+    content: "";
+    position: absolute;
+    height: 10rem;
+    border: #00394b solid 2px;
+    top: 110%;
+    left: 0.6rem; }
+
+@media (max-width: 768px) {
+  .contact-sidebar {
+    display: none; } }
+
 .hero {
   color: whitesmoke;
   background-color: #0A192F;
@@ -106,11 +132,12 @@
   .hero__content {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     margin: auto; }
   .hero__text {
     align-items: center;
     justify-content: space-evenly;
-    margin: auto 2rem auto 0;
+    margin: auto 2rem auto 2rem;
     line-height: 1.25; }
     .hero__text--header {
       color: #72FACA;
@@ -153,7 +180,8 @@
     left: -2rem;
     width: 15rem;
     height: 2.75rem;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    z-index: -1; }
     @media (max-width: 768px) {
       .about-me__header::after {
         left: -1.65rem; } }
@@ -207,7 +235,8 @@
     left: -2rem;
     width: 15rem;
     height: 2.75rem;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    z-index: -1; }
     @media (max-width: 768px) {
       .portfolio__header::after {
         left: -1.65rem; } }
@@ -290,7 +319,8 @@
     left: -2rem;
     width: 15rem;
     height: 2.75rem;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    z-index: -1; }
     @media (max-width: 768px) {
       .resume__header::after {
         left: -1.65rem; } }
@@ -329,7 +359,8 @@
     left: -2rem;
     width: 15rem;
     height: 2.75rem;
-    background-repeat: no-repeat; }
+    background-repeat: no-repeat;
+    z-index: -1; }
     @media (max-width: 768px) {
       .contact__header::after {
         left: -1.65rem; } }
@@ -348,10 +379,27 @@
 
 .contact__item {
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 1rem; }
   .contact__item img {
-    width: 2rem;
+    width: 1.5rem;
     filter: invert(100%); }
   .contact__item span {
     vertical-align: middle; }
+
+footer {
+  box-sizing: border-box;
+  padding: 3rem;
+  padding-top: 5rem;
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 0.25rem; }
+  footer div {
+    font-family: "Roboto Mono", sans-serif;
+    margin: auto;
+    font-size: smaller;
+    color: #00AAB3; }

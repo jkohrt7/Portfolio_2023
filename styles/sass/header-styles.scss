@@ -155,6 +155,45 @@ $secondary-aqua: #72FACA;
     }
 }
 
+// ~~ Contact sidebar ~~
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+
+    position: fixed;
+    left: 1rem;
+    bottom: 6rem;
+
+    img {
+        width: 1.4rem;
+        filter: invert(100%);
+
+        transition: filter 0.1s ease-in-out;
+
+        &:hover {
+            filter: invert(70%);
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 10rem;
+        border: $secondary-navy solid 2px;
+
+        top: 110%;
+        left: 0.6rem;
+    }
+}
+
+@media (max-width: $breakpoint-tablet) {
+    .contact-sidebar {
+        display: none;
+    }
+}
+
 // ~~ Hero Section ~~
 .hero {
     color: whitesmoke;
@@ -170,13 +209,14 @@ $secondary-aqua: #72FACA;
     &__content {
         display: flex;
         justify-content: center;
+        flex-direction: column;
         margin: auto;
     }
 
     &__text {
         align-items: center;
         justify-content: space-evenly;
-        margin: auto 2rem auto 0;
+        margin: auto 2rem auto 2rem;
 
         line-height: 1.25;
 
@@ -255,6 +295,7 @@ $secondary-aqua: #72FACA;
         width: 15rem;
         height: 2.75rem;
         background-repeat: no-repeat;
+        z-index: -1;
 
         @media  (max-width: $breakpoint-tablet) {
             left: -1.65rem;
@@ -462,11 +503,12 @@ $secondary-aqua: #72FACA;
 
     &__item {
         display: flex;
+        justify-content: center;
         align-items: center;
         gap: 1rem;
 
         img {
-            width: 2rem;
+            width: 1.5rem;
             filter: invert(100%)
         }
 
@@ -475,3 +517,25 @@ $secondary-aqua: #72FACA;
         }
     }
 }   
+
+footer {
+    box-sizing: border-box;
+    padding: 3rem;
+    padding-top: 5rem;
+    margin-top: 2rem;
+    
+    
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 0.25rem;
+
+    div {
+        font-family: "Roboto Mono", sans-serif;;
+        margin: auto;
+        font-size: smaller;
+        color: $primary-aqua;
+    }
+}
